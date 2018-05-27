@@ -1,0 +1,60 @@
+.TodoItem {
+  display: flex;
+  align-items: center;
+  background: white;
+  min-height: 6rem;
+  padding: 1rem;
+  padding-left: 1rem;
+  font-size: 2.5rem;
+  border-bottom: 1px solid $faded-grey;
+  word-break: break-all;
+
+  &__button {
+    border-radius: 100%;
+    height: 3rem;
+    width: 3rem;
+    background: none;
+    border: 1px solid $faded-grey;
+    outline: none;
+    margin-right: 1.5rem;
+
+
+    &--complete {
+      @extend .TodoItem__button;
+      color: $faded-green;
+      border: 1px solid $faded-green;
+    }
+
+    &--remove {
+      @extend .TodoItem__button;
+      border: none;
+      color: $faded-red;
+      font-size: 2rem;
+      font-weight: bold;
+      color: transparent;
+      transition: color .2s ease;
+
+    }
+  }
+
+  &__title {
+    flex: 1;
+    transition: all .2s ease;
+
+    &--complete {
+      @extend .TodoItem__title;
+      color: $faded-grey;
+      text-decoration: line-through;
+    }
+  }
+
+  &:hover {
+    .TodoItem__button--remove {
+      color: $faded-red;
+
+      &:hover {
+        color: $red;
+      }
+    }
+  }
+}

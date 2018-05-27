@@ -1,0 +1,10 @@
+.Footer {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+
+  a {
+    color: $faded-red;
+    text-decoration: none;
+  }
+}

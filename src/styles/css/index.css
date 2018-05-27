@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i");
+*,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'PT Sans', sans-serif; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  background: rgba(245, 245, 245, 0.801); }
+
+.TodoList {
+  width: 100%;
+  box-shadow: 0 5px 60px rgba(0, 0, 0, 0.1), 0 3px 10px rgba(0, 0, 0, 0.23);
+  margin-top: 3rem;
+  margin-bottom: 7rem; }
+
+.TodoInputForm input {
+  width: 100%;
+  height: 6rem;
+  padding-left: 5rem;
+  color: #444;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgba(224, 224, 224, 0.486);
+  font-size: 2.7rem; }
+  .TodoInputForm input::placeholder {
+    font-style: italic;
+    opacity: 0.3; }
+
+.TodoItem {
+  display: flex;
+  align-items: center;
+  background: white;
+  min-height: 6rem;
+  padding: 1rem;
+  padding-left: 1rem;
+  font-size: 2.5rem;
+  border-bottom: 1px solid rgba(224, 224, 224, 0.486);
+  word-break: break-all; }
+  .TodoItem__button, .TodoItem__button--complete, .TodoItem__button--remove {
+    border-radius: 100%;
+    height: 3rem;
+    width: 3rem;
+    background: none;
+    border: 1px solid rgba(224, 224, 224, 0.486);
+    outline: none;
+    margin-right: 1.5rem; }
+    .TodoItem__button--complete {
+      color: rgba(0, 128, 0, 0.3);
+      border: 1px solid rgba(0, 128, 0, 0.3); }
+    .TodoItem__button--remove {
+      border: none;
+      color: rgba(139, 0, 0, 0.45);
+      font-size: 2rem;
+      font-weight: bold;
+      color: transparent;
+      transition: color .2s ease; }
+  .TodoItem__title, .TodoItem__title--complete {
+    flex: 1;
+    transition: all .2s ease; }
+    .TodoItem__title--complete {
+      color: rgba(224, 224, 224, 0.486);
+      text-decoration: line-through; }
+  .TodoItem:hover .TodoItem__button--remove {
+    color: rgba(139, 0, 0, 0.45); }
+    .TodoItem:hover .TodoItem__button--remove:hover {
+      color: rgba(139, 0, 0, 0.7); }
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 45rem;
+  margin: 0 auto;
+  color: #666; }
+
+.Header {
+  margin-top: 4rem;
+  color: rgba(139, 0, 0, 0.45);
+  font-size: 10rem; }
+
+.Footer {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem; }
+  .Footer a {
+    color: rgba(139, 0, 0, 0.45);
+    text-decoration: none; }
