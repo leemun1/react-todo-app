@@ -3,6 +3,7 @@ import uuid from 'uuid';
 
 import Input from './Input';
 import TodoItem from './TodoItem';
+import TodoListSummary from './TodoListSummary';
 
 class TodoList extends React.Component {
   state = {
@@ -53,6 +54,16 @@ class TodoList extends React.Component {
     this.setState({ todos: newTodos });
   }
 
+  onClearCompleted = () => {
+    const { todos } = this.state;
+    const newTodos = todos.filter(todo => !todo.completed)
+    this.setState({ todos: newTodos });
+  }
+
+  foo = () => {
+    console.log('bar');
+  }
+
   render() {
     const { todos } = this.state;
     return (
@@ -66,6 +77,14 @@ class TodoList extends React.Component {
               onUpdate={this.onUpdate}
               onRemove={this.onRemove}/>
           )
+        }
+        { 
+          todos.length >= 1 
+          && <TodoListSummary 
+              todos={todos}
+              foo={this.foo}
+              onClearCompleted={this.onClearCompleted}/>
+        
         }
       </div>
     )

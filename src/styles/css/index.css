@@ -17,6 +17,14 @@ body {
   box-shadow: 0 5px 60px rgba(0, 0, 0, 0.1), 0 3px 10px rgba(0, 0, 0, 0.23);
   margin-top: 3rem;
   margin-bottom: 7rem; }
+  .TodoList__summary {
+    display: flex;
+    align-items: center;
+    background: white;
+    height: 4rem;
+    padding: 1rem;
+    padding-left: 1rem;
+    font-size: 1.5rem; }
 
 .TodoInputForm input {
   width: 100%;
@@ -75,14 +83,20 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 45rem;
+  width: 50rem;
   margin: 0 auto;
   color: #666; }
 
 .Header {
   margin-top: 4rem;
-  color: rgba(139, 0, 0, 0.45);
-  font-size: 10rem; }
+  text-align: center; }
+  .Header__title {
+    color: rgba(139, 0, 0, 0.45);
+    font-size: 10rem; }
+  .Header__subtitle {
+    font-size: 2rem;
+    font-style: italic;
+    color: #888; }
 
 .Footer {
   display: flex;

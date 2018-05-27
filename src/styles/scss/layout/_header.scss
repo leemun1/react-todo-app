@@ -1,5 +1,15 @@
 .Header {
   margin-top: 4rem;
-  color: $faded-red;
-  font-size: 10rem;
+  text-align: center;
+
+  &__title {
+    color: $faded-red;
+    font-size: 10rem;
+  }
+
+  &__subtitle {
+    font-size: 2rem;
+    font-style: italic;
+    color: #888;
+  }
 }
