@@ -7,8 +7,12 @@ Yes, it is yet another Todo App.
 
 This project was created as an attempt to clone the [Todo MVC App](http://todomvc.com/examples/react/#/).
 
-## Features
+## Made with
 - React
+- Sass
+
+## Future work
+ - Todo editing feature
 
 ## Setup
 - `git clone git@github.com:leemun1/react-todo-app.git`
