@@ -8,6 +8,7 @@ import TodoListSummary from './TodoListSummary';
 class TodoList extends React.Component {
   state = {
     todos: [],
+    filter: '',
   }
 
   onAddTodo = (event) => {
@@ -45,7 +46,6 @@ class TodoList extends React.Component {
         ...todos.slice(i + 1)
       ]
     });
-    console.log(updatedTodo);
   }
 
   onRemove = (id) => {
@@ -54,23 +54,41 @@ class TodoList extends React.Component {
     this.setState({ todos: newTodos });
   }
 
+  onSetFilter = (filter='') => {
+    if (filter === 'active') {
+      this.setState({ filter: 'active'})
+    } else if (filter === 'completed') {
+      this.setState({ filter: 'completed'})
+    } else {
+      this.setState({ filter: ''})
+    }
+  }
+
   onClearCompleted = () => {
     const { todos } = this.state;
     const newTodos = todos.filter(todo => !todo.completed)
     this.setState({ todos: newTodos });
   }
 
-  foo = () => {
-    console.log('bar');
+  filterTodos = (todos, filter) => {
+    if (filter === 'active') {
+      return todos.filter(todo => !todo.completed)
+    } else if (filter === 'completed') {
+      return todos.filter(todo => todo.completed)
+    } else {
+      return todos
+    }
   }
 
   render() {
-    const { todos } = this.state;
+    const { todos, filter } = this.state;
+    const todosRemaining = todos.filter(todo => !todo.completed)
+    const filteredTodos = this.filterTodos(todos, filter);
+    
     return (
       <div className="TodoList">
         <Input onSubmit={this.onAddTodo} />
-        {
-          todos.map(item =>
+        { filteredTodos.map(item =>
             <TodoItem 
               key={item.id} 
               item={item} 
@@ -78,13 +96,12 @@ class TodoList extends React.Component {
               onRemove={this.onRemove}/>
           )
         }
-        { 
-          todos.length >= 1 
+        { todos.length >= 1 
           && <TodoListSummary 
-              todos={todos}
-              foo={this.foo}
-              onClearCompleted={this.onClearCompleted}/>
-        
+              filter={filter}
+              remaining={todosRemaining}
+              onSetFilter={this.onSetFilter}
+              onClearCompleted={this.onClearCompleted}/> 
         }
       </div>
     )

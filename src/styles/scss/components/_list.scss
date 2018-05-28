@@ -5,13 +5,52 @@
   margin-top: 3rem;
   margin-bottom: 7rem;
 
+  button {
+    cursor:pointer;
+  }
+
   &__summary {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     background: white;
     height: 4rem;
     padding: 1rem;
-    padding-left: 1rem;
     font-size: 1.5rem;
+  }
+
+  &__filter {
+    border: 1px solid transparent;
+    outline: none;
+    background: none;
+    min-width: 2rem;
+    margin: 0;
+    margin-right: 0.5rem;
+    padding:  0.3rem 0.5rem;
+
+    &--active {
+      @extend .TodoList__filter;
+      border: 1px solid rgba(darkred, 0.25);
+      border-radius: 3px;
+    }
+
+    &--inactive {
+      @extend .TodoList__filter;
+      border: 1px solid transparent;
+
+      &:hover {
+        border: 1px solid rgba(darkred, 0.1);
+        border-radius: 3px;
+      }
+    }
+  }
+
+  &__clear {
+    border: none;
+    background: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }

@@ -11,7 +11,7 @@ const TodoItem = ({ item, onUpdate, onRemove }) => {
       >
       {
         item.completed
-        && <i class="fas fa-check"></i>
+        && <i className="fas fa-check"></i>
       }
       </button>
       <div className={`TodoItem__title${completed}`}>{item.title}</div>

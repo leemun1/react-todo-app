@@ -17,14 +17,37 @@ body {
   box-shadow: 0 5px 60px rgba(0, 0, 0, 0.1), 0 3px 10px rgba(0, 0, 0, 0.23);
   margin-top: 3rem;
   margin-bottom: 7rem; }
+  .TodoList button {
+    cursor: pointer; }
   .TodoList__summary {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     background: white;
     height: 4rem;
     padding: 1rem;
-    padding-left: 1rem;
     font-size: 1.5rem; }
+  .TodoList__filter, .TodoList__filter--active, .TodoList__filter--inactive {
+    border: 1px solid transparent;
+    outline: none;
+    background: none;
+    min-width: 2rem;
+    margin: 0;
+    margin-right: 0.5rem;
+    padding: 0.3rem 0.5rem; }
+    .TodoList__filter--active {
+      border: 1px solid rgba(139, 0, 0, 0.25);
+      border-radius: 3px; }
+    .TodoList__filter--inactive {
+      border: 1px solid transparent; }
+      .TodoList__filter--inactive:hover {
+        border: 1px solid rgba(139, 0, 0, 0.1);
+        border-radius: 3px; }
+  .TodoList__clear {
+    border: none;
+    background: none; }
+    .TodoList__clear:hover {
+      text-decoration: underline; }
 
 .TodoInputForm input {
   width: 100%;
