@@ -13,6 +13,8 @@ This project was created as an attempt to clone the [Todo MVC App](http://todomv
 
 ## Future work
  - Todo editing feature
+ - Prevent empty input
+ - add toggleAll button
 
 ## Setup
 - `git clone git@github.com:leemun1/react-todo-app.git`
