@@ -3,7 +3,7 @@ Yes, it is yet another Todo App.
 
 #### Check out the App here: [Live Preview](https://todos-leemun1.herokuapp.com/)
 
-![screenshot](./public/screenshot.png)
+![screenshot](./public/screenshot.PNG)
 
 This project was created as an attempt to clone the [Todo MVC App](http://todomvc.com/examples/react/#/).
 
